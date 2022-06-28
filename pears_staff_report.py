@@ -247,7 +247,7 @@ def save_staff_report(dfs, file_path, agency='Extension'):
 
 dfs = {'Extension Staff PEARS Entries' : extension_report}
 filename1 = 'Extension Staff PEARS Entries ' + prev_month.strftime('%Y-%m') + '.xlsx'
-out_path = ROOT_DIR + r"\sample_output"
+out_path = ROOT_DIR + r"\sample_outputs"
 # Alternatively, use the absolute path to the output directory
 # out_path = r"C:\Users\netid\path\to\output\directory"
 file_path1 = out_path + '\\' + filename1

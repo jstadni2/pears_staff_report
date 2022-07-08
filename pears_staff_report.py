@@ -14,7 +14,7 @@ ROOT_DIR = os.path.realpath(os.path.join(os.path.dirname(__file__), '.'))
 
 # Import SNAP-Ed staff
 
-FY22_INEP_Staff = pd.ExcelFile(ROOT_DIR + r"\sample_inputs\FY22_INEP_Staff_List.xlsx")
+FY22_INEP_Staff = pd.ExcelFile(ROOT_DIR + "/sample_inputs/FY22_INEP_Staff_List.xlsx")
 # Alternatively, use the absolute path to the staff list
 # FY22_INEP_Staff = pd.ExcelFile(r"C:\Users\netid\Box\INEP Staff Lists\FY22 INEP Staff List.xlsx")
 # Adjust header argument below for actual staff list
@@ -34,7 +34,7 @@ CPHP_Staff['email'] = CPHP_Staff['email'].str.strip()
 
 # Import PEARS users
 
-PEARS_User_Export = pd.read_excel(ROOT_DIR + r"\sample_inputs\User_Export.xlsx", sheet_name='User Data')
+PEARS_User_Export = pd.read_excel(ROOT_DIR + "/sample_inputs/User_Export.xlsx", sheet_name='User Data')
 # Alternatively, use the absolute path to the user export
 # PEARS_User_Export = pd.read_excel(r"\path\to\User_Export.xlsx", sheet_name='User Data')
 PEARS_User_Export = PEARS_User_Export.loc[PEARS_User_Export['is_active'] == 1]
@@ -69,7 +69,7 @@ module_ids = ['program_id', 'activity_id', 'coalition_id', 'partnership_id', 'ps
 module_dfs = []
 
 for index, item in enumerate(import_modules):   
-    wb = pd.ExcelFile(ROOT_DIR + r"\sample_inputs" + "\\" + item[0] + "_Export.xlsx")
+    wb = pd.ExcelFile(ROOT_DIR + "/sample_inputs/" + item[0] + "_Export.xlsx")
     # Record creation data
     # Module records aggregated by the user specified in the 'reported_by' field
     create_df = pd.read_excel(wb, item[1])
@@ -247,10 +247,10 @@ def save_staff_report(dfs, file_path, agency='Extension'):
 
 dfs = {'Extension Staff PEARS Entries' : extension_report}
 filename1 = 'Extension Staff PEARS Entries ' + prev_month.strftime('%Y-%m') + '.xlsx'
-out_path = ROOT_DIR + r"\sample_outputs"
+out_path = ROOT_DIR + "/sample_outputs"
 # Alternatively, use the absolute path to the output directory
 # out_path = r"C:\Users\netid\path\to\output\directory"
-file_path1 = out_path + '\\' + filename1
+file_path1 = out_path + '/' + filename1
 
 save_staff_report(dfs, file_path1, agency='Extension')
 
@@ -268,7 +268,7 @@ cphp_report = compile_report(cphp_staff_modules, agency='CPHP')
 
 dfs = {'CPHP Staff PEARS Entries' : cphp_report}
 filename2 = 'CPHP Staff PEARS Entries ' + prev_month.strftime('%Y-%m') + '.xlsx'
-file_path2 = out_path + '\\' + filename2
+file_path2 = out_path + '/' + filename2
 
 save_staff_report(dfs, file_path2, agency='CPHP')
 
@@ -313,8 +313,11 @@ def send_mail(send_from, send_to, Cc, subject, text, file_path, filename, userna
     smtp = smtplib.SMTP('smtp.office365.com', 587)
     if isTls:
         smtp.starttls()
-    smtp.login(username,password)
-    smtp.sendmail(send_from, send_to.split(',') + msg['Cc'].split(','), msg.as_string())
+    try:    
+        smtp.login(username,password)
+        smtp.sendmail(send_from, send_to.split(',') + msg['Cc'].split(','), msg.as_string())
+    except smtplib.SMTPAuthenticationError:
+        print("Authentication failed. Make sure to provide a valid username and password.")
     smtp.quit()
 
 # Email the SNAP-Ed staff report

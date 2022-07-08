@@ -7,6 +7,3 @@ docker cp pears_staff_report:/pears_staff_report/sample_outputs/ ./
 :: Remove the container
 docker rm pears_staff_report
 pause
-
-
-

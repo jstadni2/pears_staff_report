@@ -11,10 +11,10 @@ git clone https://github.com/jstadni2/pears_staff_report
 ```
 
 Alternatively, this repository can be downloaded as a zip file via this link:
-[https://github.com/jstadni2/pears_staff_report/archive/refs/heads/main.zip](https://github.com/jstadni2/pears_staff_report/archive/refs/heads/main.zip]
+[https://github.com/jstadni2/pears_staff_report/zipball/master/](https://github.com/jstadni2/pears_staff_report/zipball/master/)
 
 This repository is designed to run out of the box on a Windows PC using Docker and the [/sample_inputs](https://github.com/jstadni2/pears_staff_report/tree/main/sample_inputs) and [/sample_outputs](https://github.com/jstadni2/pears_staff_report/tree/main/sample_outputs) directories.
-To run the script in its current configuration, follow [this link](https://docs.docker.com/desktop/windows/install/] to install Docker Destop for Windows. 
+To run the script in its current configuration, follow [this link](https://docs.docker.com/desktop/windows/install/) to install Docker Destop for Windows. 
 
 With Docker Desktop installed, this script can be run simply by double clicking the `run_script.bat` file in your local directory.
 
@@ -27,10 +27,10 @@ C:\path\to\pears_staff_report\run_script.bat
 ### Setup instructions for SNAP-Ed implementing agencies
 
 The following steps are required to generate the PEARS Staff Report using your organization's PEARS data:
-1. Contact [PEARS support](mailto:support@pears.io) to set up an AWS S3 bucket to store automated PEARS exports.
-2. Download the automated PEARS exports. Illinois Extension's method for downloading exports from the S3 is detailed in the [PEARS Nightly Export Reformatting script](https://github.com/jstadni2/pears_nightly_export_reformatting).
+1. Contact [PEARS support](mailto:support@pears.io) to set up an [AWS S3](https://aws.amazon.com/s3/) bucket to store automated PEARS exports.
+2. Download the automated PEARS exports. Illinois Extension's method for downloading exports from the S3 is detailed in the [PEARS Nightly Export Reformatting script](https://github.com/jstadni2/pears_nightly_export_reformatting/blob/6f370389776fb8f88495fbe4e7918c203fd84997/pears_nightly_export_reformatting.py#L9-L45).
 3. Set the appropriate input and output paths in `pears_staff_report.py` and `run_script.bat`.
-	- The [Input Files](#input-files) and [Output Files](#out-files) sections provide an overview of required and output data files.
+	- The [Input Files](#input-files) and [Output Files](#output-files) sections provide an overview of required and output data files.
 	- Copying input files to the build context would enable continued use of Docker and `run_script.bat` with minimal modifications.
 	- `pears_staff_report.py` may require additional alterations depending on the staff list format. 
 4. Set the usename and password variables in [pears_staff_report.py](https://github.com/jstadni2/pears_staff_report/blob/270de975d41a2fea8a9dd83013ed7b56a9460a74/pears_staff_report.py#L279-L280) using valid Office 365 credentials.	

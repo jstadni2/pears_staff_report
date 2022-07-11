@@ -48,7 +48,7 @@ Modifications to `pears_staff_report.py` may be necessary to run with subsequent
 
 ## Input Files
 
-The following input files are required to run the PEARS Monthly Data Cleaning script:
+The following input files are required to run the PEARS Staff Report script:
 - [FY22_INEP_Staff_List.xlsx](https://github.com/jstadni2/pears_staff_report/blob/main/sample_inputs/FY22_INEP_Staff_List.xlsx): A workbook that compiles various lists of Illinois Nutrition Education Programs staff.
 - Reformatted PEARS module exports output from the [PEARS Nightly Export Reformatting script](https://github.com/jstadni2/pears_nightly_export_reformatting):
 	- [Coalition_Export.xlsx](https://github.com/jstadni2/pears_staff_report/blob/main/sample_inputs/Coalition_Export.xlsx)

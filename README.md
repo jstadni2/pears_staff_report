@@ -4,7 +4,7 @@ The [PEARS](https://www.k-state.edu/oeie/pears/) Staff Report summarizes the PEA
 
 ## Installation
 
-The reccommended way to install the PEARS Staff Report is through git, which can be downloaded [here](https://git-scm.com/downloads). Once downloaded, run the following command:
+The recommended way to install the PEARS Staff Report is through git, which can be downloaded [here](https://git-scm.com/downloads). Once downloaded, run the following command:
 
 ```bash
 git clone https://github.com/jstadni2/pears_staff_report
@@ -14,7 +14,7 @@ Alternatively, this repository can be downloaded as a zip file via this link:
 [https://github.com/jstadni2/pears_staff_report/zipball/master/](https://github.com/jstadni2/pears_staff_report/zipball/master/)
 
 This repository is designed to run out of the box on a Windows PC using Docker and the [/sample_inputs](https://github.com/jstadni2/pears_staff_report/tree/main/sample_inputs) and [/sample_outputs](https://github.com/jstadni2/pears_staff_report/tree/main/sample_outputs) directories.
-To run the script in its current configuration, follow [this link](https://docs.docker.com/desktop/windows/install/) to install Docker Destop for Windows. 
+To run the script in its current configuration, follow [this link](https://docs.docker.com/desktop/windows/install/) to install Docker Desktop for Windows. 
 
 With Docker Desktop installed, this script can be run simply by double clicking the `run_script.bat` file in your local directory.
 

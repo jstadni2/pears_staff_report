@@ -27,7 +27,7 @@ SNAP_Ed_Staff['E-MAIL'] = SNAP_Ed_Staff['E-MAIL'].str.strip()
 # Adjust header argument below for actual staff list
 CPHP_Staff = pd.read_excel(FY22_INEP_Staff, sheet_name='CPHP Staff List', header=0).rename(columns={'Last Name' : 'last_name',
                                                                                                     'First Name' : 'first_name',
-                                                                                                    'email Address' : 'email'})
+                                                                                                    'Email Address' : 'email'})
 CPHP_Staff['full_name'] = CPHP_Staff['first_name'].map(str) + ' ' + CPHP_Staff['last_name'].map(str)
 CPHP_Staff = CPHP_Staff.loc[CPHP_Staff['email'].notnull(), ['full_name', 'email']]
 CPHP_Staff['email'] = CPHP_Staff['email'].str.strip()
